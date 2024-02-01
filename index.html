@@ -8,37 +8,33 @@
   <body>
     <p id="datetime">Time and Date</p>
     <div class="tabs">
-      <button class="tablinks" id="Template1">Template 1 Tab</button>
-      <button class="tablinks" id="Template2">Template 2 Tab</button>
-      <button class="tablinks" id="Template3">Template 3 Tab</button>
+      <button class="tablinks" id="Project1">Project 1</button>
+      <button class="tablinks" id="Project2">Project 2</button>
+      <button class="tablinks" id="Template3">Project 3</button>
     </div>
 
     <div class="container">
-      <div class="tabcontent" id="Template1Tab">
+      <div class="tabcontent" id="Project1Tab">
         <p>Template 1 Tab Yay!!!!!</p>
       </div>
 
-      <div class="tabcontent" id="Template2Tab">
+      <div class="tabcontent" id="Project2Tab">
         <p>Template 2 Tab Yay!!!!!</p>
       </div>
 
-      <div class="tabcontent" id="Template3Tab">
+      <div class="tabcontent" id="Project3Tab">
         <p>Template 3 Tab Yay!!!!!</p>
+        <button onclick="clockInOut(event)">Clock In</button>
         <table>
           <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+            <th>Date</th>
+            <th>Time In</th>
+            <th>Time Out</th>
           </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
+          <tr id="">
+            <td id="date">01/01/0001</td>
+            <td id="time-in">12:34:59 PM</td>
+            <td id="time-out">03:03:03 PM</td>
           </tr>
         </table>
       </div>
@@ -57,10 +53,17 @@
 
       $(".tablinks").click(selectTab);
 
+      function clockInOut(e){
+        console.log(e.val());
+        const now = new Date();
+        $('#date').textContent() = now.toLocaleDateString(); 
+        $('#time-in').textContent() = now.toLocaleTimeString(); 
+      }
+
       function updateDateTime() {
         const now = new Date();
         const currentDateTime = now.toLocaleString();
-        $('#datetime').textContent = currentDateTime;
+        $('#datetime').textContent() = currentDateTime;
       }
       setInterval(updateDateTime, 1000);
     </script>
