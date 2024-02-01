@@ -1,11 +1,12 @@
 <html>
   <head>
-    <title id="datetime">Clock In and Out</title>
+    <title>Clock In and Out</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
 
   <body>
+    <h1>Time and Date: <span id="datetime"></span></h1>
     <div class="tabs">
       <button class="tablinks" id="Template1">Template 1 Tab</button>
       <button class="tablinks" id="Template2">Template 2 Tab</button>
@@ -56,19 +57,13 @@
 
       $(".tablinks").click(selectTab);
 
-     // create a function to update the date and time
       function updateDateTime() {
-        // create a new `Date` object
         const now = new Date();
-
-        // get the current date and time as a string
         const currentDateTime = now.toLocaleString();
-
-        // update the `textContent` property of the `span` element with the `id` of `datetime`
-        document.querySelector('#datetime').textContent = currentDateTime;
+        console.log(now);
+        console.log(currentDateTime);
+        $('#datetime').textContent = currentDateTime;
       }
-
-      // call the `updateDateTime` function every second
       setInterval(updateDateTime, 1000);
     </script>
   </body>
