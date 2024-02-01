@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <h1>Time and Date: <span id="datetime"></span></h1>
+    <h1>Time and Date: <span id="datetime">yep</span></h1>
     <div class="tabs">
       <button class="tablinks" id="Template1">Template 1 Tab</button>
       <button class="tablinks" id="Template2">Template 2 Tab</button>
@@ -60,7 +60,7 @@
       function updateDateTime() {
         const now = new Date();
         const currentDateTime = now.toLocaleString();
-        console.log(now);
+        console.log(now.Date);
         console.log(currentDateTime);
         $('#datetime').textContent = currentDateTime;
       }
