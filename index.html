@@ -2,14 +2,40 @@
 <html>
   <head>
     <title>Clock In and Out</title>
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
 
   <body>
-    
+    <div class="tabs">
+      <button class="tablinks" id="Template1">Template 1 Tab</button>
+      <button class="tablinks" id="Template2">Template 2 Tab</button>
+      <button class="tablinks" id="Template3">Template 3 Tab</button>
+    </div>
+
+    <div class="container">
+      <div class="tabcontent" id="Template1Tab">
+        <p>Template 1 Tab Yay!!!!!</p>
+      </div>
+
+      <div class="tabcontent" id="Template2Tab">
+        <p>Template 2 Tab Yay!!!!!</p>
+      </div>
+
+      <div class="tabcontent" id="Template3Tab">
+        <p>Template 3 Tab Yay!!!!!</p>
+      </div>
+    </div>
     
     <script>
+      $(".tabcontent").hide();
+      $("Template1Tab").show();
       
+      function selectTab(){
+        $(".tabcontent").hide();
+        $("#"+this.id+"Tab").show();
+      }
+
+      $(".tablinks").click(selectTab);
     </script>
   </body>
 </html>
